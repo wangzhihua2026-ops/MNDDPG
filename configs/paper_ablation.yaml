@@ -1,0 +1,36 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+
+method:
+  name: MNDDPG
+  mode: paper_ablation
+
+ablation:
+  group: full_mnddpg
+  use_proxy_weights: true
+  use_context_gating: true
+  use_hard_routing: true
+  use_privacy_mask: true
+  use_federated_clipping: true
+
+federated:
+  num_clients: 6
+  rounds: 10
+  local_steps: 96
+  local_updates: 8
+  clip_norm: 1.75
+
+agent:
+  batch_size: 32
+
+evaluation:
+  steps: 200
+  scenario_limit: 30
+
+output:
+  log_dir: outputs/logs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  figure_dir: outputs/figures
+  table_dir: outputs/tables

@@ -1,0 +1,9 @@
+simulator:
+  task_classes: compute_intensive,data_intensive,realtime_sensitive
+  clients: 6
+  route_slots: 8
+  privacy_levels: 10
+  medium_privacy_threshold: 5
+  high_privacy_threshold: 8
+  external_dataset: false
+

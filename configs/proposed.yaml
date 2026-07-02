@@ -1,0 +1,35 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+  device: cpu
+
+method:
+  name: MNDDPG
+  mode: proposed
+
+simulator:
+  dataset: generated_iiot_offloading
+  split_seed: 3407
+  external_dataset: false
+
+federated:
+  num_clients: 6
+  rounds: 1
+  local_steps: 16
+  local_updates: 2
+  clip_norm: 1.75
+
+agent:
+  batch_size: 8
+
+evaluation:
+  mode: seen
+  steps: 24
+
+output:
+  log_dir: outputs/logs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  figure_dir: outputs/figures
+  table_dir: outputs/tables
+

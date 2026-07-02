@@ -1,0 +1,19 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+
+method:
+  name: RandomFeasible
+  mode: baseline
+
+simulator:
+  dataset: generated_iiot_offloading
+  external_dataset: false
+
+evaluation:
+  mode: seen
+  steps: 24
+
+output:
+  result_dir: outputs/results
+

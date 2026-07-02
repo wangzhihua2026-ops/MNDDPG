@@ -1,0 +1,45 @@
+project:
+  name: mnddpg_review_package
+  seed: 3407
+  device: cpu
+
+method:
+  name: MNDDPG
+  mode: review_artifact_package
+
+review_package:
+  artifact_only: true
+  execution_status: not_executed
+  generated_by: review_artifact_package
+  requires_long_run: true
+  overwrite_executed_outputs: false
+
+simulator:
+  dataset: generated_iiot_offloading
+  split_seed: 3407
+  external_dataset: false
+
+federated:
+  num_clients: 6
+  rounds: 20
+  local_steps: 128
+  local_updates: 8
+  clip_norm: 1.75
+
+agent:
+  batch_size: 32
+  gating_temperature: 0.8
+  route_temperature: 0.45
+
+evaluation:
+  mode: seen
+  steps: 200
+  scenario_limit: 30
+  bootstrap_resamples: 2000
+
+output:
+  log_dir: outputs/review_package/logs
+  checkpoint_dir: outputs/review_package/checkpoints
+  result_dir: outputs/review_package/results
+  figure_dir: outputs/review_package/figures
+  table_dir: outputs/review_package/tables

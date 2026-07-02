@@ -1,0 +1,29 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+
+method:
+  name: PaperBaselines
+  mode: paper_baselines
+
+simulator:
+  dataset: generated_iiot_offloading
+  split_seed: 3407
+  external_dataset: false
+
+evaluation:
+  mode: seen
+  steps: 200
+  scenario_limit: 30
+
+baseline:
+  include_core: true
+  train_core: true
+  training_steps: 400
+
+output:
+  log_dir: outputs/logs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  figure_dir: outputs/figures
+  table_dir: outputs/tables

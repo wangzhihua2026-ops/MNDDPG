@@ -1,0 +1,5 @@
+simulator:
+  dataset: generated_seen_protocol
+  mode: seen
+  external_dataset: false
+

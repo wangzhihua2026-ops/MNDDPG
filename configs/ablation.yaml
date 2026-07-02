@@ -1,0 +1,29 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+
+method:
+  name: MNDDPG
+  mode: ablation
+
+ablation:
+  group: full_mnddpg
+  use_proxy_weights: true
+  use_context_gating: true
+  use_hard_routing: true
+  use_privacy_mask: true
+  use_federated_clipping: true
+
+federated:
+  num_clients: 6
+  rounds: 1
+  local_steps: 16
+  local_updates: 2
+  clip_norm: 1.75
+
+agent:
+  batch_size: 8
+
+output:
+  result_dir: outputs/results
+

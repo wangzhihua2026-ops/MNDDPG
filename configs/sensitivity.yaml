@@ -1,0 +1,36 @@
+project:
+  name: mnddpg_experiment_project
+  seed: 3407
+  device: cpu
+
+method:
+  name: MNDDPG
+  mode: sensitivity
+
+simulator:
+  dataset: generated_iiot_offloading
+  split_seed: 3407
+  external_dataset: false
+
+federated:
+  num_clients: 6
+  rounds: 1
+  local_steps: 16
+  local_updates: 2
+  clip_norm: 1.75
+
+agent:
+  batch_size: 8
+  gating_temperature: 0.8
+  route_temperature: 0.45
+
+sensitivity:
+  clip_norm_values: 1.0,1.75,2.5
+  gating_temperature_values: 0.8,0.45,0.2
+
+output:
+  log_dir: outputs/logs
+  checkpoint_dir: outputs/checkpoints
+  result_dir: outputs/results
+  figure_dir: outputs/figures
+  table_dir: outputs/tables
